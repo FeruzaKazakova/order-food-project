@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import './App.css';
 import Basket from './components/basket/Basket';
 import Header from './components/header/Header';
 import Meals from './components/meals/Meals';
