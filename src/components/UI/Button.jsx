@@ -1,31 +1,48 @@
 import styled from "styled-components"
 
-const Button = ({children}) => {
-  return <StyledButton>{children}</StyledButton>
+const Button = ({children, variant='contained', borderStyle="rounded"}) => {
+  return <StyledButton variant={variant} borderStyle={borderStyle}>{children}</StyledButton>
 }
 
 export default Button;
 
+const getBackgroundColor = (props) => {
+  return props.variant === "contained" ? "#8A2B06" : "white"
+}
+
+const getBorder = (props) => {
+  return props.variant === "contained" ? "none" : "1px solid #8A2B06"
+}
+
+const getColor = (props) => {
+  return props.variant === "contained" ? "white" : "#8A2B06"
+}
+
+const getBorderValues = (props) => {
+  return props.borderStyle ==="rounded" ? "20px" : "6px"
+}
+
 const StyledButton = styled.button`
-    background-color: #8A2B06;
-    border-radius: 20px;
-    padding: 10px 32px;
-    border: none;
+    background-color: ${getBackgroundColor} ;
+    border-radius: ${getBorderValues};
+    padding: 10px 26px;
+    border: ${getBorder};
 
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
-    color: #FFFFFF;
+    color: ${getColor};
     cursor: pointer;
     text-align: center;
     display: flex;
     align-items: center;
-    &:hover{
+  &:hover{
     background-color: #7E2A0A;
-    border-radius: 20px;
-    }
+    color: white;
+    border: 1px solid #7E2A0A;
+  }
     &:active{
     background: #993108;
     border-radius: 20px;
-    }
+  }
 `
