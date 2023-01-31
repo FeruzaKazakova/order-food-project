@@ -1,43 +1,34 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { fetchApi } from "../../lib/fetchApi";
 import MealItem from "./meal-item/MealItem";
 
-const DUMMY_MEALS = [
-    {
-        id: '1',
-        title: 'Sushi',
-        description: 'Finest fish and veggies',
-        price: 22.99
-    },
-    {
-        id: '2',
-        title: 'Schnitzel',
-        description: 'A german specialty!',
-        price: 16.00
-    },
-    {
-        id: '3',
-        title: 'Barbecue Burger',
-        description: 'American, raw, meaty',
-        price: 12.99
-    },    
-    {
-        id: '4',
-        title: 'Green Bowl',
-        description: 'Healthy...and green...',
-        price: 19.99
-    }
-]
-
-
 const Meals = () => {
+    const [meals, setMeals] = useState([])
+    const [error, setError] = useState('')
+    const [isLoading, setLoading] = useState('')
+
+    const getMeals = async () => {
+    try{
+        setLoading(true)
+
+        const response = await fetchApi('foods')
+        setMeals(response.data)
+    } catch (error){
+        setError('Failed to load meals')
+    }
+    }
+
+    useEffect(() => {
+        getMeals()
+    }, [])
+
     return (
-    // <Card>
         <Card>
-        {DUMMY_MEALS.map((meal) => {
-            return <MealItem meal={meal} key={meal.id}/>
+        {meals.map((meal) => {
+            return <MealItem meal={meal} key={meal._id}/>
         })}
         </Card>
-    // </Card>
     )
 }
 

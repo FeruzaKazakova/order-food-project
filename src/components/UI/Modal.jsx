@@ -45,7 +45,7 @@ const modalOverlayRoot = document.getElementById('modal-overlay')
 const Modal = ({children, onClose}) => {
   return (
     <>
-    {createPortal(<StyledBackdrop onClose={onClose}/>,backdropRoot)}
+    {createPortal(<StyledBackdrop onClick={onClose}/>, backdropRoot)}
     {createPortal(<ModalContent>{children}</ModalContent>, modalOverlayRoot)}
     </>
   )

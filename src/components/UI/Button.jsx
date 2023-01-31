@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
-const Button = ({children, variant='contained', borderStyle="rounded"}) => {
-  return <StyledButton variant={variant} borderStyle={borderStyle}>{children}</StyledButton>
+const Button = ({children, variant='contained', borderStyle="rounded", ...restProps}) => {
+  return <StyledButton variant={variant} borderStyle={borderStyle} {...restProps}>{children}</StyledButton>
 }
 
 export default Button;
@@ -39,7 +39,6 @@ const StyledButton = styled.button`
   &:hover{
     background-color: #7E2A0A;
     color: white;
-    border: 1px solid #7E2A0A;
   }
     &:active{
     background: #993108;

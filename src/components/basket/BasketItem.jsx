@@ -3,7 +3,8 @@ import Button from "../UI/Button"
 import { ReactComponent as DecreaseAmountIcon } from "../../assets/icons/minus.svg";
 import { ReactComponent as IncreaseAmountIcon } from "../../assets/icons/plus.svg";
 
-const BasketItem = ({title, price, amount}) => {
+const BasketItem = ({title, price, amount, decreaseAmount, increaseAmount}) => {
+
   return (
     <Container>
         <Title>
@@ -15,8 +16,8 @@ const BasketItem = ({title, price, amount}) => {
                 <Amount>x{amount}</Amount>
             </PriceAndAmountContainer>
             <CounterContainer>
-                <Button borderStyle="squared" variant="outlined">{<DecreaseAmountIcon/>}</Button>
-                <Button borderStyle="squared" variant="outlined">{<IncreaseAmountIcon/>}</Button>
+                <Button borderStyle="squared" variant="outlined" onClick={decreaseAmount}>{<DecreaseAmountIcon/>}</Button>
+                <Button borderStyle="squared" variant="outlined" onClick={increaseAmount}>{<IncreaseAmountIcon/>}</Button>
             </CounterContainer>
         </Content>
     </Container>
