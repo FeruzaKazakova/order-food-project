@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/order-food-project/static/css/main.c8d038fb.css",
-    "main.js": "/order-food-project/static/js/main.a324b8ff.js",
+    "main.js": "/order-food-project/static/js/main.4311ce48.js",
     "static/media/summary-img.jpg": "/order-food-project/static/media/summary-img.c40a9167dc81752e7fb1.jpg",
     "static/media/basket-icon.svg": "/order-food-project/static/media/basket-icon.b8d33e94afa151b65893c6647ec288c8.svg",
     "index.html": "/order-food-project/index.html",
@@ -9,10 +9,10 @@
     "static/media/plus.svg": "/order-food-project/static/media/plus.5e2025a96ba73c4c7c15f2ed65f9ccd4.svg",
     "static/media/minus.svg": "/order-food-project/static/media/minus.c485e6fde4d19ac2fd0cec0d4c7d72fa.svg",
     "main.c8d038fb.css.map": "/order-food-project/static/css/main.c8d038fb.css.map",
-    "main.a324b8ff.js.map": "/order-food-project/static/js/main.a324b8ff.js.map"
+    "main.4311ce48.js.map": "/order-food-project/static/js/main.4311ce48.js.map"
   },
   "entrypoints": [
     "static/css/main.c8d038fb.css",
-    "static/js/main.a324b8ff.js"
+    "static/js/main.4311ce48.js"
   ]
 }
