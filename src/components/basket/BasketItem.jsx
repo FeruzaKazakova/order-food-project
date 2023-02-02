@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Button from "../UI/Button"
 import { ReactComponent as DecreaseAmountIcon } from "../../assets/icons/minus.svg";
 import { ReactComponent as IncreaseAmountIcon } from "../../assets/icons/plus.svg";
+import { memo } from "react";
 
 const BasketItem = ({title, price, amount, decreaseAmount, increaseAmount}) => {
 
@@ -24,7 +25,7 @@ const BasketItem = ({title, price, amount, decreaseAmount, increaseAmount}) => {
   )
 }
 
-export default BasketItem;
+export default memo(BasketItem);
 
 const Container = styled.div`
     padding: 24px 0px;

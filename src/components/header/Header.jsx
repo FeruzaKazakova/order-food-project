@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { memo, useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { BasketContext } from "../../store/BasketContext";
 import BasketButton from "./BasketButton";
@@ -32,7 +32,7 @@ const Header = ({onShowBasket}) => {
     </Container>
 }
 
-export default Header;
+export default memo(Header);
 
 const Container = styled.header`
     width: 100%;

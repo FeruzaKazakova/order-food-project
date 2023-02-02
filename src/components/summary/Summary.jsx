@@ -1,3 +1,4 @@
+import { memo } from "react";
 import styled from "styled-components";
 import BackgroundImg from '../../assets/images/summary-img.jpg'
 import SummaryInfoCard from "./SummaryInfoCard";
@@ -9,7 +10,7 @@ const Summary = () => {
     </Container>
 }
 
-export default Summary;
+export default memo(Summary); 
 
 const Container = styled.div`
     height: 527px;

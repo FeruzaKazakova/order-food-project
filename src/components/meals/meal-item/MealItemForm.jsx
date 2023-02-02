@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useCallback, useContext, useState } from 'react'
 import styled from 'styled-components';
 import {ReactComponent as PlusIcon} from '../../../assets/icons/plus-icon.svg'
 import { BasketContext } from '../../../store/BasketContext';
@@ -9,11 +9,11 @@ const MealItemForm = ({id, title, price}) => {
     const {addToBasket} = useContext(BasketContext)
     const [amount, setAmount] = useState(1)
 
-    const amountChangeHandler = (event) => {
+    const amountChangeHandler = useCallback((event) => {
         setAmount(event.target.value)
-    }
+    }, [])
 
-    const submitHandler = (event) => {
+    const submitHandler = useCallback((event) => {
         event.preventDefault()
 
         const basketItem = {
@@ -24,7 +24,7 @@ const MealItemForm = ({id, title, price}) => {
         }
 
         addToBasket(basketItem)
-    }
+    },[addToBasket,id,price,title,amount])
 
   return( 
   <StyledForm onSubmit={submitHandler}>
